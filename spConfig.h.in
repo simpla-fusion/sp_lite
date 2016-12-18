@@ -1,0 +1,81 @@
+#ifndef SIMPLA_CONFIG_H
+#define SIMPLA_CONFIG_H
+
+#define SIMPLA_VERSION_MAJOR @SIMPLA_VERSION_MAJOR@
+#define SIMPLA_VERSION_MINOR @SIMPLA_VERSION_MAJOR@
+#define SIMPLA_VERSION_PATCHLEVEL @SIMPLA_VERSION_PATCHLEVEL@
+#define SIMPLA_VERSION_IDENTIFY "@SIMPLA_VERSION_IDENTIFY@"
+
+#define  AUTHOR "@AUTHOR@"
+#define  COPYRIGHT "@COPYRIGHT@"
+
+/* Optimized build */
+#cmakedefine OPT_BUILD
+
+/* Thread Building Blocks are available to use */
+#cmakedefine TBB_FOUND
+
+/* BOOST headers are available to use */
+#cmakedefine BOOST_FOUND
+
+/* BOOST headers are available to use */
+#cmakedefine HAVE_BOOST_HEADERS
+
+#cmakedefine MPI_FOUND
+#define @SKIP_MPICXX@ 1
+
+/* HDF5 library is available so use it */
+#cmakedefine HDF5_FOUND
+
+/* BLAS library is available so use it */
+#cmakedefine BLAS_FOUND
+
+#cmakedefine LAPACK_FOUND
+
+#cmakedefine PETSC_FOUND
+
+#cmakedefine SIMPLA_MAXIMUM_DIMENSION @SIMPLA_MAXIMUM_DIMENSION@
+
+#cmakedefine MAX_NDIMS_OF_ARRAY  @MAX_NDIMS_OF_ARRAY@
+
+#ifdef __cplusplus
+ namespace simpla{ static const unsigned short MAX_DIM_VAL = SIMPLA_MAXIMUM_DIMENSION;}
+#endif //__cplusplus
+
+
+
+
+#include <stdint.h>
+#include <stdlib.h>
+
+#cmakedefine SP_REAL @SP_REAL@
+#ifndef SP_REAL
+#define SP_REAL double
+#endif
+
+typedef SP_REAL Real;
+
+
+#define SP_TRUE 1
+#define SP_FALSE  0
+#define SP_SUCCESS 0
+#define SP_FAILED 1
+
+#define SP_DO_NOTHING 0xFFFF
+
+#define SP_UNIMPLEMENTED  SP_DO_NOTHING +1
+
+#define SP_MAX_NUM_DIMS 10
+
+typedef size_t size_type;
+typedef int8_t byte_type; // int8_t
+typedef int Integral;
+typedef int64_t mesh_id_type; //!< Data type of vertex's index , i.e. i,j
+typedef int64_t index_type;
+typedef unsigned int uint;
+typedef size_type id_type;
+#define MAX_NDIMS_OF_ARRAY  8
+
+
+#endif //SIMPLA_CONFIG_H
+
