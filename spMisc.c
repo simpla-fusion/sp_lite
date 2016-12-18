@@ -2,10 +2,24 @@
 // Created by salmon on 16-9-25.
 //
 #include <stdio.h>
+#include <sp_lite/spConfig.h>
+
 #include "spMisc.h"
 #include "spDataType.h"
 #include "spParallel.h"
-#include "sp_lite_config.h"
+#include "spMacro.h"
+
+int print_error(int error_code, char const *file, int line, char const *function, char const *cmd)
+{
+    if (error_code == SP_FAILED)
+    {
+        printf("%s:%d:0:%s: %s: [%s] \n", file, line, function, "FAILED", cmd);
+    } else if (error_code == SP_DO_NOTHING)
+    {
+        printf("%s:%d:0:%s: %s: [%s] \n", file, line, function, "This function is NOT IMPLEMENTED!", cmd);
+    }
+    return error_code;
+}
 
 int printArray(const void *d, int type_tag, int ndims, size_type const *dims)
 {

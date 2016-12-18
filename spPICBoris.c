@@ -4,7 +4,7 @@
 #include <math.h>
 
 #include "spPICBoris.h"
-#include "sp_lite_config.h"
+#include "spMacro.h"
 #include "spDataType.h"
 #include "spParallel.h"
 #include "spPhysicalConstants.h"
@@ -34,4 +34,13 @@ int spParticleDestroyBorisYee(spParticle **sp)
     return SP_SUCCESS;
 }
 
+
+int spParticleInitializeBorisYee(spParticle *sp, Real n0, Real T0) { return SP_DO_NOTHING; }
+
+int spParticleUpdateBorisYee(spParticle *sp,
+                             Real dt,
+                             const struct spField_s *fE,
+                             const struct spField_s *fB,
+                             struct spField_s *fRho,
+                             struct spField_s *fJ) { return SP_DO_NOTHING; }
 

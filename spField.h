@@ -8,7 +8,7 @@
 #ifndef SPFIELD_H_
 #define SPFIELD_H_
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 
 struct spMesh_s;

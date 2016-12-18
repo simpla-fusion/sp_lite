@@ -77,5 +77,6 @@ typedef size_type id_type;
 #define MAX_NDIMS_OF_ARRAY  8
 
 
+
 #endif //SIMPLA_CONFIG_H
 

@@ -2,7 +2,7 @@
 // Created by salmon on 16-9-12.
 //
 #include "../../spParticle.h"
-#include "../../sp_lite_config.h"
+#include "../../spMacro.h"
 
 
 int spParticleBucketReset(spParticle *sp)

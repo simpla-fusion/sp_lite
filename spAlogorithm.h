@@ -5,7 +5,7 @@
 #ifndef SIMPLA_SPALOGORITHM_H
 #define SIMPLA_SPALOGORITHM_H
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 int sort_by_key(size_type const *, size_type const *, size_type *);
 

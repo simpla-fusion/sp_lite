@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 #include "spParallel.h"
 #include "spMPI.h"

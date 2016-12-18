@@ -11,8 +11,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdint.h>
-#include "SIMPLA_config.h"
-#include "spMPI.h"
+#include <sp_lite/spConfig.h>
 
 #undef DONE
 #undef CHECK
@@ -30,17 +29,7 @@
 #define CHECK_STR(_MSG_)    printf( "%s:%d:0:%s: %s = %s \n", __FILE__, __LINE__,__PRETTY_FUNCTION__,__STRING(_MSG_), (_MSG_) );
 
 
-inline int print_error(int error_code, char const *file, int line, char const *function, char const *cmd)
-{
-    if (error_code == SP_FAILED)
-    {
-        printf("%s:%d:0:%s: %s: [%s] \n", file, line, function,
-               ((error_code == SP_FAILED) ? "FAILED"
-                                          : "SUCCESS"),
-               cmd);
-    }
-    return error_code;
-}
+int print_error(int error_code, char const *file, int line, char const *function, char const *cmd);
 
 #define SP_CALL(_CMD_) {if(SP_SUCCESS!= print_error((_CMD_), __FILE__, __LINE__, __PRETTY_FUNCTION__, __STRING(_CMD_))) {return SP_FAILED; }}
 

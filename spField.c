@@ -2,7 +2,7 @@
 // Created by salmon on 16-7-20.
 //
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 #include <assert.h>
 
@@ -15,6 +15,7 @@
 #include "spField.h"
 #include "spAlogorithm.h"
 #include "spMisc.h"
+#include "spMPI.h"
 
 #define MAX_NUM_OF_FIELD_ATTR 16
 
@@ -326,3 +327,5 @@ int spFieldTestSync(spMesh const *m, int type_tag)
 
     return SP_SUCCESS;
 };
+
+int spFieldFillSeq(spField *f, int domain_tag) { return SP_DO_NOTHING; }

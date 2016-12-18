@@ -5,7 +5,7 @@
 #ifndef SIMPLA_SPDATATYPE_H
 #define SIMPLA_SPDATATYPE_H
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 enum
 {

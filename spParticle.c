@@ -1,7 +1,7 @@
 //
 // Created by salmon on 16-7-20.
 //
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 #include <string.h>
 #include <assert.h>
@@ -16,8 +16,8 @@
 #include "spMesh.h"
 #include "spField.h"
 #include "spParticle.h"
-#include "detail/spParticle.impl.h"
-#include "detail/sp_device.h"
+//#include "detail/spParticle.impl.h"
+//#include "detail/sp_device.h"
 
 typedef struct spParticleAttrEntity_s
 {
@@ -308,9 +308,9 @@ int spParticleInitialize(spParticle *sp, int const *dist_types)
 
     SP_CALL(spMPIPrefixSum(&offset, &total));
 
-    SP_CALL(spParticleInitialize_device((Real **) (data), 6, dist_types, spParticleSize(sp), offset));
+//    SP_CALL(spParticleInitialize_device((Real **) (data), 6, dist_types, spParticleSize(sp), offset));
 
-    SP_CALL(spParticleBucketInitialize_device(sp));
+//    SP_CALL(spParticleBucketInitialize_device(sp));
 
     return SP_SUCCESS;
 
@@ -421,7 +421,7 @@ int spParticleSort(spParticle *sp)
 
     sp->need_sorting = SP_FALSE;
 
-    SP_CALL(spParticleBucketBuild_device(sp));
+//    SP_CALL(spParticleBucketBuild_device(sp));
 
     return SP_SUCCESS;
 };

@@ -8,7 +8,7 @@
 #ifndef SPMESH_H_
 #define SPMESH_H_
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 #include "spObject.h"
 
 enum

@@ -5,7 +5,7 @@
 #ifndef SIMPLA_SPMISC_H
 #define SIMPLA_SPMISC_H
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 int printArray(const void *d, int type_tag, int ndims, size_type const *dims);
 

@@ -7,7 +7,7 @@
 
 #include <math.h>
 #include <assert.h>
-#include "../sp_lite_config.h"
+#include "../spMacro.h"
 #include "../spPICBoris.h"
 #include "../spParticle.h"
 #include "../spMesh.h"

@@ -2,7 +2,7 @@
 // Created by salmon on 16-9-12.
 //
 #include <assert.h>
-#include "sp_lite_config.h"
+#include "spMacro.h"
 #include "spMPI.h"
 #include "spDataType.h"
 #include "spAlogorithm.h"
@@ -19,6 +19,55 @@
         ERROR(_error_msg);                                                 \
     }                                                                      \
 }
+
+
+int spMPIInitialize(int argc, char **argv) { return SP_DO_NOTHING; }
+
+int spMPIFinalize() { return SP_DO_NOTHING; }
+
+MPI_Comm spMPIComm() { return MPI_COMM_WORLD; }
+
+size_type spMPIGenerateObjectId() { return SP_DO_NOTHING; }
+
+int spMPIBarrier() { return SP_DO_NOTHING; }
+
+int spMPIRank()
+{
+    int rank = 0;
+    MPI_CALL(MPI_Comm_rank(spMPIComm(), &rank));
+    return rank;
+}
+
+int spMPISize()
+{
+    int size = 0;
+    MPI_CALL(MPI_Comm_size(spMPIComm(), &size));
+    return size;
+}
+
+int spMPITopology(int *mpi_topo_ndims, int *mpi_topo_dims, int *periods, int *mpi_topo_coord) { return SP_DO_NOTHING; }
+
+//int spMPIPrefixSum(size_type *offset, size_type *p_count) { return SP_DO_NOTHING; }
+
+//int spMPIUpdaterCreate(spMPIUpdater **updater) { return SP_DO_NOTHING; }
+
+//int spMPIUpdaterDestroy(spMPIUpdater **updater) { return SP_DO_NOTHING; }
+
+
+//int spMPIUpdaterDeploy(spMPIUpdater *updater, int mpi_sync_start_dims, int ndims,
+//                       const size_type *shape, const size_type *start, const size_type *stride,
+//                       const size_type *count, const size_type *block) { return SP_DO_NOTHING; }
+
+
+//int spMPIUpdateHalo(spMPIUpdater *updater, int type_tag, void *p) { return SP_DO_NOTHING; }
+
+//int spMPIUpdateBucket(spMPIUpdater *updater, int type_tag, int num, void **data, size_type *bucket_start,
+//                      size_type *bucket_count, size_type *sorted_index, size_type *tail) { return SP_DO_NOTHING; }
+//
+//int spMPIUpdateIndexed(spMPIUpdater *updater, int type_tag, int num, void **data,
+//                       size_type const *send_size, size_type **send_index,
+//                       size_type const *recv_size, size_type **recv_index) { return SP_DO_NOTHING; }
+
 
 int spMPIPrefixSum(size_type *p_offset, size_type *p_count)
 {

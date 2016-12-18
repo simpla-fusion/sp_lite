@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <math.h>
-#include "sp_lite_config.h"
+#include "spMacro.h"
 #include "spMesh.h"
 #include "spParallel.h"
 #include "spMPI.h"
@@ -57,6 +57,8 @@ struct spMesh_s
     spMPIUpdater *mpi_updater;
 
 };
+
+int spMeshSetupParam(spMesh *sp) { return SP_DO_NOTHING; }
 
 int spMeshCreate(spMesh **m)
 {

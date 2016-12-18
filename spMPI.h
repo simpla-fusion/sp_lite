@@ -6,7 +6,8 @@
 #define SIMPLA_SPMPI_H
 
 #include <mpi.h>
-#include "sp_lite_config.h"
+#include <sp_lite/spConfig.h>
+#include "spMacro.h"
 
 struct spMPIUpdater_s;
 

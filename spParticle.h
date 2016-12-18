@@ -9,7 +9,7 @@
 #define SPPARTICLE_H_
 
 
-#include "sp_lite_config.h"
+#include "spMacro.h"
 #include "spField.h"
 
 #ifndef SP_MAX_NUMBER_OF_PARTICLE_ATTR

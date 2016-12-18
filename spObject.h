@@ -7,7 +7,7 @@
 
 #ifndef SPOBJECT_H_
 #define SPOBJECT_H_
-#include "sp_lite_config.h"
+#include "spMacro.h"
 
 #define SP_OBJECT_HEAD   size_type id;
 
